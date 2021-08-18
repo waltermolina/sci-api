@@ -13,6 +13,7 @@ const port = process.env.PORT || 3000;
 
 //Routes
 const localRouter = require("./api/locales/local.router");
+const empresaRouter = require("./api/empresas/empresa.router");
 
 var path = require("path");
 
@@ -32,6 +33,7 @@ app.use(compression());
 app.use(express.json());
 
 app.use("/api/locales", localRouter);
+app.use("/api/empresas", empresaRouter);
 
 
 //test upload
