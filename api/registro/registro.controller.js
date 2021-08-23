@@ -1,11 +1,11 @@
 const {
   todasLasEmpresas
-} = require("./empresa.service");
+} = require("./registro.service");
 
 
 module.exports = {
-  todasLasEmpresas: (req, res) => {
-    todasLasEmpresas(req, (err, results) => {
+  todosLosRegistros: (req, res) => {
+    todosLosRegistros(req, (err, results) => {
       if (err) {
         console.log(err);
         return;
@@ -16,8 +16,8 @@ module.exports = {
       });
     });
   },
-  unaEmpresaid: (req, res) => {
-    unaEmpresaid(req, (err, results) => {
+  unRegistroid: (req, res) => {
+    unRegistroid(req, (err, results) => {
       if (err) {
         console.log(err);
         return;
@@ -28,20 +28,8 @@ module.exports = {
       });
     });
   },
-  unaEmpresacuit: (req, res) => {
-    unaEmpresacuit(req, (err, results) => {
-      if (err) {
-        console.log(err);
-        return;
-      }
-      return res.json({
-        success: 1,
-        data: results,
-      });
-    });
-  },
-  unaEmpresarazonsocial: (req, res) => {
-    unaEmpresarazonsocial(req, (err, results) => {
+  unRegistrofechayhora: (req, res) => {
+    unRegistrofechayhora(req, (err, results) => {
       if (err) {
         console.log(err);
         return;
@@ -52,4 +40,5 @@ module.exports = {
       });
     });
   }
+  
 };

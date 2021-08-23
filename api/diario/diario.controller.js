@@ -1,15 +1,14 @@
 const {
-  todosLosLocales,
-  unLocalid,
-  unLocalcapmax, 
-  unLocallat,
-  unLocallon
-} = require("./local.service");
+  todosLosDiarios,
+  unDiarioid,
+  unDiariofechahora,
+  unDiariovalor
+} = require("./diario.service");
 
 
 module.exports = {
-  todosLosLocales: (req, res) => {
-    todosLosLocales(req, (err, results) => {
+  todosLosDiarios: (req, res) => {
+    todosLosDiarios(req, (err, results) => {
       if (err) {
         console.log(err);
         return;
@@ -20,8 +19,8 @@ module.exports = {
       });
     });
   },
-  unLocalid: (req, res) => {
-    unLocalid(req, (err, results) => {
+  unDiarioid: (req, res) => {
+    unDiarioid(req, (err, results) => {
       if (err) {
         console.log(err);
         return;
@@ -32,8 +31,9 @@ module.exports = {
       });
     });
   },
-  unLocallat: (req, res) => {
-    unLocallat(req, (err, results) => {
+
+  unDiariofechayhora: (req, res) => {
+    unDiariofechayhora(req, (err, results) => {
       if (err) {
         console.log(err);
         return;
@@ -44,20 +44,8 @@ module.exports = {
       });
     });
   },
-  unLocallon: (req, res) => {
-    unLocallon(req, (err, results) => {
-      if (err) {
-        console.log(err);
-        return;
-      }
-      return res.json({
-        success: 1,
-        data: results,
-      });
-    });
-  },
-  unLocalcapmax: (req, res) => {
-    unLocalcapmax(req, (err, results) => {
+  unDiariovalor: (req, res) => {
+    unDiariovalor(req, (err, results) => {
       if (err) {
         console.log(err);
         return;
