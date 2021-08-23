@@ -25,6 +25,25 @@ module.exports = {
         }
       });
   },
+  //Get country by code
+  unaEmpresa: (id, callBack) => {
+    pool.query(
+      `
+      SELECT *
+      FROM empresa
+      WHERE idempresa = ?
+      `,
+      [id],
+      (error, results, fields) => {
+        if (error) {
+          return callBack(error);
+        } else {
+          results = results[0] || [];
+          return callBack(null, results);
+        }
+      }
+    );
+  },
 
 }
 
