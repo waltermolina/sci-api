@@ -14,6 +14,7 @@ const port = process.env.PORT || 3000;
 //Routes
 const localRouter = require("./api/locales/local.router");
 const empresaRouter = require("./api/empresas/empresa.router");
+const sensorRouter = require("./api/sensor/sensor.router");
 
 var path = require("path");
 
@@ -34,12 +35,8 @@ app.use(express.json());
 
 app.use("/api/locales", localRouter);
 app.use("/api/empresas", empresaRouter);
+app.use("/api/sensores", sensorRouter);
 
-
-//test upload
-app.get("/upload", (req, res) => {
-  res.sendFile(path.join(__dirname + "/public/test.html"));
-});
 
 app.listen(port, () => {
   console.log(`Server up and running on port ${port}` );

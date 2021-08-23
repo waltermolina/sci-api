@@ -2,13 +2,15 @@ const {
   todosLosLocales, unLocalid, unLocallat, unLocallon, unLocaldir, unLocalcapmax
 } = require("./local.controller");
 
+const {
+  todosLosSensoresDeUnLocal
+} = require("../sensor/sensor.controller");
+
 const router = require("express").Router();
 
 router.get("/", todosLosLocales);
-router.get("/", unLocalid);
-router.get("/", unLocallat);
-router.get("/", unLocallon);
-router.get("/", unLocalcapmax);
+//router.get("/:id", unLocalid);
+router.get("/:id/sensores", todosLosSensoresDeUnLocal);
 
 
 module.exports = router;
