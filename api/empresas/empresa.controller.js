@@ -17,19 +17,35 @@ module.exports = {
       });
     });
   },
-
-  unaEmpresa: (req, res) => {
-    const id = req.params.id; 
-    unaEmpresa(id, (err, results) => {
+  unaEmpresaid: (req, res) => {
+    unaEmpresaid(req, (err, results) => {
       if (err) {
         console.log(err);
         return;
       }
-      if (!results) {
-        return res.json({
-          success: 0,
-          message: "Empresa no encontrada",
-        });
+      return res.json({
+        success: 1,
+        data: results,
+      });
+    });
+  },
+  unaEmpresacuit: (req, res) => {
+    unaEmpresacuit(req, (err, results) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      return res.json({
+        success: 1,
+        data: results,
+      });
+    });
+  },
+  unaEmpresarazonsocial: (req, res) => {
+    unaEmpresarazonsocial(req, (err, results) => {
+      if (err) {
+        console.log(err);
+        return;
       }
       return res.json({
         success: 1,
@@ -37,6 +53,4 @@ module.exports = {
       });
     });
   }
-
-  
 };

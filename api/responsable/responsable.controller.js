@@ -1,15 +1,15 @@
 const {
-  todosLosLocales,
-  unLocalid,
-  unLocalcapmax, 
-  unLocallat,
-  unLocallon
-} = require("./local.service");
+  todosLosResponsables,
+  unResponsableid,
+  unResponsableusuario,
+  unResponsablepassword,
+  unResponsablemail
+} = require("./responsable.service");
 
 
 module.exports = {
-  todosLosLocales: (req, res) => {
-    todosLosLocales(req, (err, results) => {
+  todosLosResponsables: (req, res) => {
+    todosLosResponsables(req, (err, results) => {
       if (err) {
         console.log(err);
         return;
@@ -20,8 +20,8 @@ module.exports = {
       });
     });
   },
-  unLocalid: (req, res) => {
-    unLocalid(req, (err, results) => {
+  unResponsableid: (req, res) => {
+    unResponsableid(req, (err, results) => {
       if (err) {
         console.log(err);
         return;
@@ -32,8 +32,8 @@ module.exports = {
       });
     });
   },
-  unLocallat: (req, res) => {
-    unLocallat(req, (err, results) => {
+  unResponsableusuario: (req, res) => {
+    unResponsableusuario(req, (err, results) => {
       if (err) {
         console.log(err);
         return;
@@ -44,8 +44,8 @@ module.exports = {
       });
     });
   },
-  unLocallon: (req, res) => {
-    unLocallon(req, (err, results) => {
+  unResponsablepassword: (req, res) => {
+    unResponsablepassword(req, (err, results) => {
       if (err) {
         console.log(err);
         return;
@@ -56,8 +56,8 @@ module.exports = {
       });
     });
   },
-  unLocalcapmax: (req, res) => {
-    unLocalcapmax(req, (err, results) => {
+  unResponsablemail: (req, res) => {
+    unResponsablemail(req, (err, results) => {
       if (err) {
         console.log(err);
         return;
